@@ -1,5 +1,5 @@
 {
-  "name": "y9-mars-inst-passport",
+  "name": "zz-mars-inst-passport",
   "version": "1.0.8",
   "description": "处理机构session信息",
   "main": "index.js",
@@ -21,7 +21,7 @@
   "homepage": "https://github.com/hl198181/mars#readme",
   "dependencies": {
     "debug": "^2.2.0",
-    "y9-mars-util": "^1.0.1"
+    "zz-mars-util": "^1.0.1"
   },
   "devDependencies": {
     "should": "^7.1.0"

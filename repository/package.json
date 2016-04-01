@@ -1,5 +1,5 @@
 {
-  "name": "y9-mars-repository",
+  "name": "zz-mars-repository",
   "version": "1.0.2",
   "description": "资源模型管理器，通过配置模型、代理数据来源。构建一个自动映射来自服务资源的模型数据对象，实现模型与资源之间的无缝数据交换",
   "main": "index.js",
@@ -24,8 +24,8 @@
   "dependencies": {
     "debug": "^2.2.0",
     "q": "^1.4.1",
-    "y9-mars-service": "^1.0.1",
-    "y9-mars-util": "^1.0.1"
+    "zz-mars-service": "^1.0.1",
+    "zz-mars-util": "^1.0.1"
   },
   "devDependencies": {
     "should": "^7.1.0"

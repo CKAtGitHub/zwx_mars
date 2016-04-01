@@ -1,5 +1,5 @@
 {
-  "name": "y9-mars-security",
+  "name": "zz-mars-security",
   "version": "1.0.4",
   "description": "基于express的安全过滤组件。通过注册的过滤器，检查访问当前路径的用户是否具备访问权限。",
   "main": "index.js",
@@ -30,7 +30,7 @@
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
     "q": "^1.4.1",
-    "y9-mars-util": "^1.0.1"
+    "zz-mars-util": "^1.0.1"
   },
   "devDependencies": {
     "should": "^7.1.0",

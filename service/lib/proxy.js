@@ -60,7 +60,7 @@ proto.post = function post(name) {
     }
 
     var handler = this.handler(action.proxy, {
-        action: action
+        action: action.action
     }).params(action.params).header(action.header);
 
     return handler;
@@ -100,10 +100,10 @@ proto.action = function action(name, action) {
         throw new Error("proxy action must have a name");
     }
 
-    ////检查action是否有action,proxy属性
-    //if (!action.action) {
-    //    throw new Error("proxy action must have a action");
-    //}
+    //检查action是否有action,proxy属性
+    if (!action.action) {
+        throw new Error("proxy action must have a action");
+    }
 
     if (!action.proxy) {
         throw new Error("proxy action must have a proxy");

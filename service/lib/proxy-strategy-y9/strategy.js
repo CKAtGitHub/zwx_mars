@@ -36,7 +36,7 @@ var proto = module.exports = function (options) {
     Y9._baseurl = baseurl;
 
     return Y9;
-};
+}
 
 function Handler(options) {
     this._options = options || {};
@@ -58,38 +58,55 @@ util.inherits(Handler, proxyStrategy);
 
 
 Handler.prototype.launch = function launch(success, failed, done) {
-
+    var self = this;
     var data = {
-        token: this._strategy._token,
-        action: this._action.action,
-        header: this._header,
-        data: this._params
+        token: self._strategy._token,
+        //action: this._action,
+        pageInfo: self._header,
+        data: self._params
     };
 
-    debug("执行Y9服务调用.", data);
-    superagent.post(this._strategy._baseurl)
+    debug("执行服务调用.", data);
+    superagent.post(self._strategy._baseurl)
         .send(data)
         .set('Content-Type', 'application/json;charset=UTF-8')
         .end(function (err, res) {
-
-            if (res && res.ok) {
-                if (res.body.code === "100") {
-                    if (success) {
-                        success(res);
+            if (res && res.text){
+                res.body = JSON.parse(res.text);
+                if (res && res.ok) {
+                    if (res.body.status === "100") {
+                        if (success) {
+                            success(res);
+                        }
+                    } else {
+                        if (res.body){
+                            res.body.status = res.body.status || "100";
+                            if (success){
+                                success(res);
+                            }
+                        }else{
+                            if (failed) {
+                                failed(new Error(res.body.cause), res);
+                            }
+                        }
+                        ////如果服务返回没有带上附属信息，则判断是否有数据
+                        //if(Array.isArray(res.body.data)) {
+                        //    res.body.status = "100";
+                        //    if (success) {
+                        //        success(res);
+                        //    }
+                        //}
                     }
                 } else {
                     if (failed) {
-                        failed(new Error(res.body.cause), res);
+                        failed(err, res);
                     }
                 }
-            } else {
-                if (failed) {
-                    failed(err, res);
-                }
+            }else{
+                failed(new Error("请求服务失败!"),res);
             }
             if (done) {
                 done();
             }
         });
-
 }

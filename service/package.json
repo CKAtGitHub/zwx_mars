@@ -1,5 +1,5 @@
 {
-  "name": "y9-mars-service",
+  "name": "zz-mars-service",
   "version": "1.0.26",
   "description": "包括服务代理调用、服务发布等相关功能。",
   "main": "index.js",
@@ -24,7 +24,7 @@
   "dependencies": {
     "debug": "^2.2.0",
     "superagent": "^1.4.0",
-    "y9-mars-util": "^1.0.2"
+    "zz-mars-util": "^1.0.2"
   },
   "devDependencies": {
     "body-parser": "^1.14.1",
