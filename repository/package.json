@@ -1,6 +1,6 @@
 {
-  "name": "zz-mars-repository",
-  "version": "1.0.2",
+  "name": "zwx-mars-repository",
+  "version": "1.0.0",
   "description": "资源模型管理器，通过配置模型、代理数据来源。构建一个自动映射来自服务资源的模型数据对象，实现模型与资源之间的无缝数据交换",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hl198181/mars.git"
+    "url": "git+https://github.com/CKAtGitHub/zwx-mars.git"
   },
   "keywords": [
     "web",
@@ -18,9 +18,9 @@
   "author": "Leon",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hl198181/mars/issues"
+    "url": "https://github.com/CKAtGitHub/zwx-mars/issues"
   },
-  "homepage": "https://github.com/hl198181/mars#readme",
+  "homepage": "https://github.com/CKAtGitHub/zwx-mars#readme",
   "dependencies": {
     "debug": "^2.2.0",
     "q": "^1.4.1",

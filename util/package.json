@@ -1,6 +1,6 @@
 {
-  "name": "zz-mars-util",
-  "version": "1.0.2",
+  "name": "zwx-mars-util",
+  "version": "1.0.0",
   "description": "工具组件",
   "main": "index.js",
   "scripts": {
@@ -8,19 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hl198181/mars.git"
+    "url": "git+https://github.com/CKAtGitHub/zwx_mars.git"
   },
   "keywords": [
     "web",
     "mars",
     "util"
   ],
-  "author": "Leon",
+  "author": "CKHuang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hl198181/mars/issues"
+    "url": "https://github.com/CKAtGitHub/zwx_mars/issues"
   },
-  "homepage": "https://github.com/hl198181/mars#readme",
+  "homepage": "https://github.com/CKAtGitHub/zwx_mars#readme",
   "devDependencies": {
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.10",

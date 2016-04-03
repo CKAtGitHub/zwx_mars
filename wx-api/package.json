@@ -1,6 +1,6 @@
 {
-  "name": "zz-wx-api",
-  "version": "0.0.2",
+  "name": "zwx-wx-api",
+  "version": "1.0.0",
   "description": "微信公共平台Node库",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/hl198181/mars.git"
+    "url": "git://github.com/CKAtGitHub/zwx_mars.git"
   },
   "keywords": [
     "weixin",
@@ -32,7 +32,7 @@
     "rewire": "*",
     "istanbul": "*"
   },
-  "author": "Leon",
+  "author": "CKHuang",
   "license": "MIT",
   "readmeFilename": "README.md",
   "directories": {

@@ -1,5 +1,5 @@
 {
-  "name": "zz-passport-weixin",
+  "name": "zwx-passport-weixin",
   "version": "0.0.1",
   "description": "passport oauth2 strategy for weixin",
   "main": "./lib",
@@ -20,10 +20,10 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/hl198181/mars"
+    "url": "https://github.com/CKAtGitHub/zwx_mars"
   },
   "bugs": {
-    "url": "https://github.com/hl198181/mars/issues"
+    "url": "https://github.com/CKAtGitHub/zwx_mars/issues"
   },
-  "homepage": "https://github.com/hl198181/mars"
+  "homepage": "https://github.com/CKAtGitHub/zwx_mars"
 }

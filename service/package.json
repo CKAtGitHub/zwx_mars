@@ -1,6 +1,6 @@
 {
-  "name": "zz-mars-service",
-  "version": "1.0.26",
+  "name": "zwx-mars-service",
+  "version": "1.0.0",
   "description": "包括服务代理调用、服务发布等相关功能。",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hl198181/mars.git"
+    "url": "git+https://github.com/CKAtGitHub/zwx_mars.git"
   },
   "keywords": [
     "web",
@@ -18,9 +18,9 @@
   "author": "Leon",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hl198181/mars/issues"
+    "url": "https://github.com/CKAtGitHub/zwx_mars/issues"
   },
-  "homepage": "https://github.com/hl198181/mars#readme",
+  "homepage": "https://github.com/CKAtGitHub/zwx_mars#readme",
   "dependencies": {
     "debug": "^2.2.0",
     "superagent": "^1.4.0",
