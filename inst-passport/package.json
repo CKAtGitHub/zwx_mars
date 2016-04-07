@@ -1,6 +1,6 @@
 {
   "name": "zwx-mars-inst-passport",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "处理机构session信息",
   "main": "index.js",
   "scripts": {
