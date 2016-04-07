@@ -80,7 +80,11 @@ Handler.prototype.launch = function launch(success, failed, done) {
                         }
                     } else {
                         if (res.body){
-                            res.body.status = res.body.status || "100";
+                            if (parseInt(res.body.status) > 0){
+                                res.body.status = res.body.status || "100";
+                            }else{
+                                res.body.zz_status = '100';
+                            }
                             if (success){
                                 success(res);
                             }
@@ -89,13 +93,6 @@ Handler.prototype.launch = function launch(success, failed, done) {
                                 failed(new Error(res.body.cause), res);
                             }
                         }
-                        ////如果服务返回没有带上附属信息，则判断是否有数据
-                        //if(Array.isArray(res.body.data)) {
-                        //    res.body.status = "100";
-                        //    if (success) {
-                        //        success(res);
-                        //    }
-                        //}
                     }
                 } else {
                     if (failed) {
