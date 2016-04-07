@@ -7,7 +7,7 @@
 'use strict';
 var debug = require("debug")("mars-repository-model");
 var model = require('./Model');
-var marsUtil = require('y9-mars-util');
+var marsUtil = require('zwx-mars-util');
 
 var proto = module.exports = function (options) {
 

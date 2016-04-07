@@ -6,7 +6,7 @@
 
 'use strict';
 
-var debug = require("debug")("y9-mars-security-handler-demo");
+var debug = require("debug")("zwx-mars-security-handler-demo");
 
 
 module.exports = function (options) {

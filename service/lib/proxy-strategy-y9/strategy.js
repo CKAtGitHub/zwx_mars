@@ -8,7 +8,7 @@
 var superagent = require("superagent");
 var proxyStrategy = require("../proxy-strategy");
 var util = require("util");
-var debug = require("debug")("y9-mars-service-proxy-strategy-y9");
+var debug = require("debug")("zwx-mars-service-proxy-strategy-y9");
 
 var proto = module.exports = function (options) {
     function Y9(options) {

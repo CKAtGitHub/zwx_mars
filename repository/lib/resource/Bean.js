@@ -7,7 +7,7 @@
 'use strict';
 
 
-var marsUtil = require('y9-mars-util');
+var marsUtil = require('zwx-mars-util');
 var Q = require("q");
 
 /**

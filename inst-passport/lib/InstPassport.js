@@ -2,7 +2,7 @@
  * Created by leon on 15/11/19.
  */
 
-var Y9Util = require("y9-mars-util");
+var Y9Util = require("zwx-mars-util");
 
 exports = module.exports = InstPassport;
 

@@ -9,7 +9,7 @@ var rep = require("../lib");
 var repository = rep.Repository();
 var Model = rep.Model;
 var should = require('should');
-var service = require("y9-mars-service");
+var service = require("zwx-mars-service");
 var proxy = service.Proxy();
 
 describe('Resource', function () {

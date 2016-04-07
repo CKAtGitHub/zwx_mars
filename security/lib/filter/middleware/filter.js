@@ -6,7 +6,7 @@
 
 'use strict';
 
-var debug = require("debug")("y9-mars-security");
+var debug = require("debug")("zwx-mars-security");
 var express = require("express");
 var router = express.Router();
 var FilterRedirect = require("./filter-redirect");

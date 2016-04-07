@@ -6,7 +6,7 @@
 
 'use strict';
 
-var debug = require("debug")("y9-mars-service-proxy");
+var debug = require("debug")("zwx-mars-service-proxy");
 
 var proto = module.exports = function (options) {
 

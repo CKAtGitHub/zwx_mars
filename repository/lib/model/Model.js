@@ -8,7 +8,7 @@
 
 var resource = require('../resource');
 var util = require('util');
-var marsUtil = require('y9-mars-util');
+var marsUtil = require('zwx-mars-util');
 var Q = require("q");
 
 var proto = module.exports = function (options) {
