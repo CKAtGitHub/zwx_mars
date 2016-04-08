@@ -163,9 +163,9 @@ proto.service = function service() {
                 res.send(result.body);
             }, function (error) {
                 errResData.cause = error.message;
-                res.statusCode = 500;
+                res.statusCode = error.status || 500;
                 res.send(errResData);
             }, function () {
             });
     }
-}
+};
