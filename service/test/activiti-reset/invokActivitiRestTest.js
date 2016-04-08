@@ -21,6 +21,18 @@ describe("InvokActivitiRest", function () {
             });
     });
 
+    it("zwx_test", function () {
+        request.post("http://127.0.0.1:8080/zwxadmin/goods/json/queryCate")
+            .auth('zwx_user', '1y$CZna5')
+            .send({
+                "token" : "8fc50dd14a951318ca168e40a9fa1ec78d1110e058700c9affdbe6ab5eb6b931",
+                "data":{"cityId":10001}
+            })
+            .end(function (err,res) {
+                res.should.not.be.NaN;
+            });
+    });
+
     it("supertest", function (done) {
 
         request.post("http://120.24.84.201:10080/ws-biz/service/action.yun9")
