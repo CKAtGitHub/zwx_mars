@@ -11,16 +11,11 @@ var debug = require("debug")("zwx-mars-security-local");
 exports = module.exports = function (options) {
 
     /**
-     * 根据设备信息，决定调整地址
+     * 根据是否是biz开头决定是不是admin
      */
-    function getDeviceRedirect(req,redirects) {
-        // 微信内置浏览器：
-        redirects.micromessenger = redirects.micromessenger || redirects.weixin;
-        var deviceAgent = req.headers["user-agent"].toLowerCase();
-        for (var r in redirects) {
-            if (deviceAgent.match(r.toLowerCase()) && redirects[r]) {
-                return redirects[r];
-            }
+    function getRedirect(req,redirects) {
+        if (req.url.indexOf("/biz") != -1) {
+            return redirects.admin || redirects.default
         }
         return redirects.default;
     }
@@ -39,7 +34,7 @@ exports = module.exports = function (options) {
                     if (typeof handler._failureRedirect == 'string') {
                         handler.redirect(handler._failureRedirect);
                     } else if (typeof handler._failureRedirect == 'object') {
-                        handler.redirect(getDeviceRedirect(req,handler._failureRedirect));
+                        handler.redirect(getRedirect(req,handler._failureRedirect));
                     }
                 }
             });
