@@ -84,8 +84,8 @@ Handler.prototype.launch = function launch(success, failed, done) {
         .set('Content-Type', 'application/json;charset=UTF-8')
         .end(function (err, res) {
             if (res && res.text){
-                res.body = JSON.parse(res.text);
                 if (res && res.ok) {
+                    res.body = JSON.parse(res.text);
                     if (res.body.status === "100") {
                         if (success) {
                             success(res);

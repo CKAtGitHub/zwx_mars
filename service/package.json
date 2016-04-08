@@ -1,6 +1,6 @@
 {
   "name": "zwx-mars-service",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "包括服务代理调用、服务发布等相关功能。",
   "main": "index.js",
   "scripts": {
