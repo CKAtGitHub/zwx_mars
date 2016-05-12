@@ -55,7 +55,7 @@ exports = module.exports = function (options) {
                     for (var i = 0;i < item.integrity.length;i++) {
                          if (!(validateMethods[item.integrity[i]] &&
                              validateMethods[item.integrity[i]](userInfo))) {
-                             done(false,key);
+                             done(false,item.integrity[i]);
                              return;
                          }
                     }
