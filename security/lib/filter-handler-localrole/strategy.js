@@ -16,17 +16,17 @@ exports = module.exports = function (options) {
         if (item.role && item.role.length > 0) {
             debug("路径:" + item.path + ",要求检查角色.");
 
-            handler._validRole(req, item, function (pass) {
+            handler._validRole(req, item, function (pass,errorRole) {
                 if (pass) {
                     debug("角色验证通过！");
                     next();
                 } else {
                     debug("角色验证失败!");
-                    handler.redirect(handler._failureRedirect);
+                    handler.redirect(handler._failureRedirect[errorRole]);
                 }
             });
         } else {
-            debug("路径:" + item.path + ",不要求角色验证，跳过检查.")
+            debug("路径:" + item.path + ",不要求角色验证，跳过检查.");
             next();
         }
     };
@@ -55,7 +55,7 @@ exports = module.exports = function (options) {
                     done(true);
                 }
             }
-        , failureRedirect = options.failureRedirect || "/access-denied";
+        , failureRedirect = options.failureRedirect;
 
     handler._validRole = validRole;
     handler._failureRedirect = failureRedirect;
