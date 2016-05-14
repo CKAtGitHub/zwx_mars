@@ -32,14 +32,20 @@ exports = module.exports = function (options) {
     };
 
     var validateMethods = {
-        password:function(userInfo) {
+        password:function(userInfo,roleInfo) {
             return !!userInfo.password;
         },
-        workerInfo:function(userInfo){
-            return !!userInfo.workCateName;
+        passwordWorker:function(userInfo,roleInfo) {
+            return roleInfo.code == 'worker' && !!userInfo.password;
         },
-        merchantInfo:function(userInfo) {
-            return !!userInfo.managescope;
+        passwordMerchant:function(userInfo,roleInfo) {
+            return roleInfo.code == 'merchant' && !!userInfo.password;
+        },
+        workerInfo:function(userInfo,roleInfo){
+            return roleInfo.code == 'worker' && !!userInfo.workCateName;
+        },
+        merchantInfo:function(userInfo,roleInfo) {
+            return roleInfo.code == 'merchant' && !!userInfo.managescope;
         }
         }
     ;
@@ -51,10 +57,12 @@ exports = module.exports = function (options) {
                     property = req._passport.instance._userProperty || 'user';
                 }
                 var userInfo = req[property];
+                var session = req.session || {};
+                var roleInfo = session.roleInfo || {};
                 if (item && item.integrity && item.integrity.length > 0) {
                     for (var i = 0;i < item.integrity.length;i++) {
                          if (!(options._validateMethods[item.integrity[i]] &&
-                             options._validateMethods[item.integrity[i]](userInfo))) {
+                             options._validateMethods[item.integrity[i]](userInfo,roleInfo))) {
                              done(false,item.integrity[i]);
                              return;
                          }
