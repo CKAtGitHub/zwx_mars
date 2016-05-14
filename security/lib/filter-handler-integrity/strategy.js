@@ -73,8 +73,8 @@ exports = module.exports = function (options) {
                 var roleInfo = session.roleInfo || {};
                 if (item && item.integrity && item.integrity.length > 0) {
                     for (var i = 0;i < item.integrity.length;i++) {
-                         if (!(options._validateMethods[item.integrity[i]] &&
-                             options._validateMethods[item.integrity[i]](userInfo,roleInfo))) {
+                         if (!(options.validateMethods[item.integrity[i]] &&
+                             options.validateMethods[item.integrity[i]](userInfo,roleInfo))) {
                              done(false,item.integrity[i]);
                              return;
                          }
@@ -85,9 +85,9 @@ exports = module.exports = function (options) {
                     done(true);
                 }
             }
-        , failureRedirect = options.failureRedirect
-        ,_validateMethods = options.validateMethods || validateMethods;
+        , failureRedirect = options.failureRedirect;
 
+    options.validateMethods = options.validateMethods || validateMethods;
     handler._validIntegrity = validIntegrity;
     handler._failureRedirect = failureRedirect;
 
