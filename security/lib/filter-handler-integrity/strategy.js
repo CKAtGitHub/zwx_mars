@@ -39,13 +39,13 @@ exports = module.exports = function (options) {
             return roleInfo.code == 'worker' && !!userInfo.password;
         },
         passwordMerchant:function(userInfo,roleInfo) {
-            return roleInfo.code == 'merchant' && !!userInfo.password;
+            return roleInfo.code == 'merchant'  && !!userInfo.password;
         },
         workerInfo:function(userInfo,roleInfo){
-            return roleInfo.code == 'worker' && !!userInfo.workCateName;
+            return this.passwordWorker(userInfo,roleInfo) && !!userInfo.workCateName;
         },
         merchantInfo:function(userInfo,roleInfo) {
-            return roleInfo.code == 'merchant' && !!userInfo.managescope;
+            return this.passwordMerchant(userInfo,roleInfo) && !!userInfo.managescope;
         }
         }
     ;
