@@ -42,10 +42,16 @@ exports = module.exports = function (options) {
             return roleInfo.code == 'merchant'  && !!userInfo.password;
         },
         workerInfo:function(userInfo,roleInfo){
-            return this.passwordWorker(userInfo,roleInfo) && !!userInfo.workCateName;
+            if (roleInfo.code != 'worker') {
+                return true;
+            }
+            return  !!userInfo.workCateName;
         },
         merchantInfo:function(userInfo,roleInfo) {
-            return this.passwordMerchant(userInfo,roleInfo) && !!userInfo.managescope;
+            if (roleInfo.code != 'merchant') {
+                return true;
+            }
+            return !!userInfo.managescope;
         }
         }
     ;
