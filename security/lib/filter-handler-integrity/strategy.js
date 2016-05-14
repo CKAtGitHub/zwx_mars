@@ -36,10 +36,16 @@ exports = module.exports = function (options) {
             return !!userInfo.password;
         },
         passwordWorker:function(userInfo,roleInfo) {
-            return roleInfo.code == 'worker' && !!userInfo.password;
+            if (roleInfo.code != 'worker') {
+                return true;
+            }
+            return !!userInfo.password;
         },
         passwordMerchant:function(userInfo,roleInfo) {
-            return roleInfo.code == 'merchant'  && !!userInfo.password;
+            if (roleInfo.code != 'merchant') {
+                return true;
+            }
+            return !!userInfo.password;
         },
         workerInfo:function(userInfo,roleInfo){
             if (roleInfo.code != 'worker') {
