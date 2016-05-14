@@ -53,8 +53,8 @@ exports = module.exports = function (options) {
                 var userInfo = req[property];
                 if (item && item.integrity && item.integrity.length > 0) {
                     for (var i = 0;i < item.integrity.length;i++) {
-                         if (!(validateMethods[item.integrity[i]] &&
-                             validateMethods[item.integrity[i]](userInfo))) {
+                         if (!(options._validateMethods[item.integrity[i]] &&
+                             options._validateMethods[item.integrity[i]](userInfo))) {
                              done(false,item.integrity[i]);
                              return;
                          }
@@ -65,7 +65,8 @@ exports = module.exports = function (options) {
                     done(true);
                 }
             }
-        , failureRedirect = options.failureRedirect;
+        , failureRedirect = options.failureRedirect
+        ,_validateMethods = options.validateMethods || validateMethods;
 
     handler._validIntegrity = validIntegrity;
     handler._failureRedirect = failureRedirect;
