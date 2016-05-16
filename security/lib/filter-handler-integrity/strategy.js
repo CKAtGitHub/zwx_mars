@@ -69,6 +69,9 @@ exports = module.exports = function (options) {
                     property = req._passport.instance._userProperty || 'user';
                 }
                 var userInfo = req[property];
+                if (!userInfo) {
+                    done(true);
+                }
                 var session = req.session || {};
                 var roleInfo = session.roleInfo || {};
                 if (item && item.integrity && item.integrity.length > 0) {
