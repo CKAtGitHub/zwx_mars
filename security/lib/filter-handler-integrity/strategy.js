@@ -71,6 +71,7 @@ exports = module.exports = function (options) {
                 var userInfo = req[property];
                 if (!userInfo) {
                     done(true);
+                    return;
                 }
                 var session = req.session || {};
                 var roleInfo = session.roleInfo || {};
