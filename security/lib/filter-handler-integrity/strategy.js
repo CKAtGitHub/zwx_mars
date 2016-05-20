@@ -22,6 +22,9 @@ exports = module.exports = function (options) {
                     next();
                 } else {
                     debug("数据完整性验证失败!");
+                    if (req.session && !req.session.returnTo) {
+                        req.session.returnTo = req.url;
+                    }
                     handler.redirect(handler._failureRedirect[errorRole]);
                 }
             });
