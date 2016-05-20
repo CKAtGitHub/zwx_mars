@@ -23,7 +23,7 @@ exports = module.exports = function (options) {
                 } else {
                     debug("数据完整性验证失败!");
                     if (req.session && !req.session.returnTo) {
-                        req.session.returnTo = req.url;
+                        req.session.bizReturnTo = req.url;
                     }
                     handler.redirect(handler._failureRedirect[errorRole]);
                 }
