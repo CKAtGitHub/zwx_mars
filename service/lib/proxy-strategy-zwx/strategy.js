@@ -77,7 +77,7 @@ Handler.prototype.launch = function launch(success, failed, done) {
         data: self._params
     };
 
-    debug("执行服务调用.", data);
+    debug("执行服务调用."+self._strategy._baseurl+this._action, data);
     superagent.post(self._strategy._baseurl+this._action)
         .auth(this._strategy._AppID, this._strategy._AppSecret)
         .send(data)
