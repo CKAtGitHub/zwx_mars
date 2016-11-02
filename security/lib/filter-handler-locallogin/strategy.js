@@ -17,6 +17,9 @@ exports = module.exports = function (options) {
         if (req.url.indexOf("/biz") != -1) {
             return redirects.admin || redirects.default
         }
+        if (req.url.indexOf("/merchant") != -1) {
+            return redirects.merchant || redirects.default
+        }
         return redirects.default;
     }
     var handler = function (req, res, item, params, next) {
