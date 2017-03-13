@@ -51,11 +51,19 @@ exports = module.exports = function (options) {
             }
             return !!userInfo.password;
         },
-        workerInfo:function(userInfo,roleInfo){
+        workerInfo:function(userInfo,roleInfo){             //此策略暂停使用
             if (roleInfo.code != 'worker') {
                 return true;
             }
-            return  !!userInfo.workCateName;
+            return  !!userInfo.trueName;
+        },
+        workerServerInfo:function(userInfo,roleInfo){       //服务城市、服务区域
+            if (roleInfo.code !='worker'){return true;}
+            return !!(userInfo.cityId && userInfo.serviceDistrictIds);
+        },
+        workerSkillsInfo:function(userInfo,roleInfo){       //主要技能、次要技能
+            if (roleInfo.code !='worker'){return true;}
+            return !!(userInfo.alternativeskill && userInfo.primaryskill);
         },
         merchantInfo:function(userInfo,roleInfo) {
             if (roleInfo.code != 'merchant') {
