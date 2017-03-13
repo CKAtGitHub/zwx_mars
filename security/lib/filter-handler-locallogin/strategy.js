@@ -13,12 +13,16 @@ exports = module.exports = function (options) {
     /**
      * 根据是否是biz开头决定是不是admin
      */
-    function getRedirect(req,redirects) {
+    function getRedirect(req,redirects, item) {
         if (req.url.indexOf("/biz") != -1) {
             return redirects.admin || redirects.default
         }
         if (req.url.indexOf("/merchant") != -1) {
             return redirects.merchant || redirects.default
+        }
+        //如果needLogin有，且有失败处理策略，则使用相应策略
+        if (typeof item == 'string' && redirects[item]){
+            return redirects[item];
         }
         return redirects.default;
     }
@@ -37,7 +41,7 @@ exports = module.exports = function (options) {
                     if (typeof handler._failureRedirect == 'string') {
                         handler.redirect(handler._failureRedirect);
                     } else if (typeof handler._failureRedirect == 'object') {
-                        handler.redirect(getRedirect(req,handler._failureRedirect));
+                        handler.redirect(getRedirect(req,handler._failureRedirect), item.needLogin);
                     }
                 }
             });
