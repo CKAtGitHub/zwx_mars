@@ -41,7 +41,7 @@ exports = module.exports = function (options) {
                     if (typeof handler._failureRedirect == 'string') {
                         handler.redirect(handler._failureRedirect);
                     } else if (typeof handler._failureRedirect == 'object') {
-                        handler.redirect(getRedirect(req,handler._failureRedirect), item.needLogin);
+                        handler.redirect(getRedirect(req,handler._failureRedirect,item.needLogin));
                     }
                 }
             });
