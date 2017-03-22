@@ -61,9 +61,9 @@ exports = module.exports = function (options) {
             if (roleInfo.code !='worker'){return true;}
             return !!(userInfo.cityId && userInfo.serviceDistrictIds);
         },
-        workerSkillsInfo:function(userInfo,roleInfo){       //主要技能、次要技能
+        workerSkillsInfo:function(userInfo,roleInfo){       //主要技能
             if (roleInfo.code !='worker'){return true;}
-            return !!(userInfo.alternativeskill && userInfo.primaryskill);
+            return !!(userInfo.primaryskill);
         },
         merchantInfo:function(userInfo,roleInfo) {
             if (roleInfo.code != 'merchant') {
